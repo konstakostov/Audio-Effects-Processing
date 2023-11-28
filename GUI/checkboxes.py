@@ -1,11 +1,9 @@
 import tkinter as tk
 
-from GUI.validators import CheckboxValidator
-
 
 class MainCheckbox(tk.Checkbutton):
-    def __init__(self, parent, **kwargs):
-        super().__init__(parent, command=self.verify_checkbox, **kwargs)
+    def __init__(self, parent, callback=None, **kwargs):
+        super().__init__(parent, command=self.checkbox_is_toggled, **kwargs)
         # Create a Bool Tkinter value
         self.value = tk.BooleanVar()
 
@@ -15,14 +13,19 @@ class MainCheckbox(tk.Checkbutton):
 
         # Assigns the function self.verify_checkbox as a command
         # for the checkbutton when it's activated/deactivated
-        self.command = self.verify_checkbox
+        self.command = self.checkbox_is_toggled
+
+        # Everytime the Checkbox is toggled it calls the 'checkbox_is_toggled'
+        # is called and passes the current Checkbox status
+        self.callback = callback
 
         # Widget is anchored to the left of the window (West) &
         # padding is set to 10 pixels (horizontal & vertical)
-        self.pack(anchor=tk.W, padx=10, pady=10,)
+        self.grid(sticky='W', padx=10, pady=10,)
 
-    def verify_checkbox(self):
-        if CheckboxValidator.is_checked(self.value):
-            print("Checkbox is Checked!")
-        else:
-            print("Checkbox is not Checked!")
+    # The function gets the current status of the checkbox and returns
+    def checkbox_is_toggled(self):
+        if self.callback:
+            self.callback(self.value.get())
+            return self.value.get()
+
