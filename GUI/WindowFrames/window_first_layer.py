@@ -5,7 +5,6 @@ from GUI.WidgetFunctions.functions_buttons import MainButtonFunctions
 from GUI.WidgetFunctions.functions_checkbox import MainCheckboxFunctions
 
 
-
 # First layer. It will store 'Guitar Effects'
 def first_layer(self):
     # A frame is created to store the layer and min size is set for it

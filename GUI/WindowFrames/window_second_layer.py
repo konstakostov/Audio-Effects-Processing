@@ -24,7 +24,7 @@ def second_layer(self):
         sticky='EW',
     )
 
-    # In the rows in range 1-4 are created checkboxes and buttons.
+    # In the rows in range 6-8 are created checkboxes and buttons.
     # When the checkbox is activated, it enables the button.
     # The checkbox is positioned in column 0, and the button in column 1.
     for i in range(6, 9):

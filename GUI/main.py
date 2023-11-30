@@ -4,7 +4,7 @@ from GUI.WindowFrames.window_second_layer import second_layer
 from GUI.WindowFrames.window_first_layer import first_layer
 
 
-class App(tk.Tk):
+class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
 
@@ -33,5 +33,5 @@ class App(tk.Tk):
 # Makes the window stay on screen until the user closes it.
 # Without this the program will start and close, without the user noticing.
 if __name__ == "__main__":
-    app = App()
+    app = MainWindow()
     app.mainloop()
