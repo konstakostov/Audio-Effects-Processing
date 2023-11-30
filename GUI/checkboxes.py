@@ -2,6 +2,13 @@ import tkinter as tk
 
 from GUI.buttons import MainButton
 
+# Notes for the __init__ method:
+# 'parent' is a reference to the parent widget, where 'MainCheckbox' will be placed, in this case 'App'.
+# 'callback' is a function to be called when the checkbox is toggled. It is None by default,
+# but accepts the current state of the checkbox and 'MainButton' instance.
+# '**kwargs' refers to any arguments to be passed on this widget. They can be optional
+# parameters or attributes (text/font/etc.)
+
 
 class MainCheckbox(tk.Checkbutton):
     def __init__(self, parent, callback=None, **kwargs):
@@ -13,7 +20,7 @@ class MainCheckbox(tk.Checkbutton):
         # automatically when the Checkbox state changes
         self.configure(variable=self.value)
 
-        # Add MainButton as instance attribute
+        # Add MainButton as instance attribute, by default is disabled
         self.button = MainButton(parent, text="Set Parameters", state=tk.DISABLED)
 
         # Assigns the function self.verify_checkbox as a command
