@@ -1,7 +1,6 @@
 import tkinter as tk
 
-from GUI.WindowFrames.window_second_layer import second_layer
-from GUI.WindowFrames.window_first_layer import first_layer
+from GUI.WindowFrames.window_frames import main_layers
 
 
 class MainWindow(tk.Tk):
@@ -24,10 +23,19 @@ class MainWindow(tk.Tk):
         # Makes window resizable
         self.resizable(True, True)
 
-        # Calls all the different layers.
-        # Each layer contains different effects
-        first_layer(self)
-        second_layer(self)
+        # Creates a list, containing effects name labels for 'Guitar Effects'
+        guitar_effects = ['Chorus', 'Clipping', 'Distortion', 'Phaser']
+
+        # Creates a list, containing effects name labels for 'Dynamic Range Effects'
+        dynamic_range_effects = ['Compressor', 'Gain', 'Limiter']
+
+        # First Frame. It will create 'Guitar Effects'
+        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
+        main_layers(self, 1, 5, 0, 'Guitar Effects', guitar_effects)
+
+        # Second Frame. It will create 'Dynamic Range Effects'
+        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
+        main_layers(self, 6, 9, 0, 'Dynamic Range Effects', dynamic_range_effects)
 
 
 # Makes the window stay on screen until the user closes it.
