@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from GUI.buttons import MainButton
+
 
 class MainCheckbox(tk.Checkbutton):
     def __init__(self, parent, callback=None, **kwargs):
@@ -10,6 +12,9 @@ class MainCheckbox(tk.Checkbutton):
         # self.value is bound to the Checkbox value and updates
         # automatically when the Checkbox state changes
         self.configure(variable=self.value)
+
+        # Add MainButton as instance attribute
+        self.button = MainButton(parent, text="Set Parameters", state=tk.DISABLED)
 
         # Assigns the function self.verify_checkbox as a command
         # for the checkbutton when it's activated/deactivated
@@ -26,6 +31,5 @@ class MainCheckbox(tk.Checkbutton):
     # The function gets the current status of the checkbox and returns
     def checkbox_is_toggled(self):
         if self.callback:
-            self.callback(self.value.get())
+            self.callback(self.value.get(), self.button)
             return self.value.get()
-

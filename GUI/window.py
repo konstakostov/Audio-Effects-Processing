@@ -1,6 +1,5 @@
 import tkinter as tk
 
-from GUI.buttons import MainButton
 from GUI.checkboxes import MainCheckbox
 
 
@@ -24,20 +23,19 @@ class App(tk.Tk):
         # Makes window resizable
         self.resizable(True, True)
 
+        # Calls all the different layers.
+        # Each layer contains different effects
         self.first_layer()
         self.second_layer()
 
     def first_layer(self):
         frame = tk.Frame(self)
-
-        frame.grid(sticky='EWNS')
-        for i in range(5):
-            frame.grid_rowconfigure(i, weight=1, pad=10)
         frame.grid_columnconfigure(0, weight=1)
+        frame.grid(sticky='EWNS')
 
         tk.Label(
             self,
-            text="Guitar Effects"
+            text="Guitar Effects",
         ).grid(
             row=0,
             column=0,
@@ -46,60 +44,35 @@ class App(tk.Tk):
             sticky='EW',
         )
 
-        MainCheckbox(
-            self,
-            text="Chorus",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=1,
-            column=0
-        )
+        for i in range(1, 5):
+            frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        button = MainButton(
-            self,
-            text="Example",
-            state=tk.DISABLED,
-        )
-        button.grid(
-            row=1,
-            column=1,
-        )
+            checkboxes = MainCheckbox(
+                self,
+                text=(
+                    "Chorus" if i == 1 else
+                    "Clipping" if i == 2 else
+                    "Distortion" if i == 3 else
+                    "Phaser"),
+                callback=self.on_checkbox_change,
+            )
+            checkboxes.grid(
+                row=i,
+                column=0,
+            )
 
-        MainCheckbox(
-            self,
-            text="Clipping",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=2,
-            column=0
-        )
-
-        MainCheckbox(
-            self,
-            text="Distortion",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=3,
-            column=0
-        )
-
-        MainCheckbox(
-            self,
-            text="Phaser",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=4,
-            column=0,
-        )
+            checkboxes.button.grid(
+                row=i,
+                column=1,
+                padx=10,
+                pady=10,
+                sticky='EW',
+            )
 
     def second_layer(self):
         frame = tk.Frame(self)
-
-        frame.grid(sticky='EW')
-        for i in range(4):
-            frame.grid_rowconfigure(i, weight=1)
-
         frame.grid_columnconfigure(0, weight=1)
+        frame.grid(sticky='EW')
 
         tk.Label(
             self,
@@ -112,36 +85,34 @@ class App(tk.Tk):
             sticky='EW',
         )
 
-        MainCheckbox(
-            self,
-            text="Compressor",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=6,
-            column=0
-        )
+        for i in range(6, 9):
+            frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        MainCheckbox(
-            self,
-            text="Gain",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=7,
-            column=0
-        )
+            checkboxes = MainCheckbox(
+                self,
+                text=(
+                    "Compressor" if i == 6 else
+                    "Gain" if i == 7 else
+                    "Limiter"),
+                callback=self.on_checkbox_change,
+            )
 
-        MainCheckbox(
-            self,
-            text="Limiter",
-            callback=self.on_checkbox_change,
-        ).grid(
-            row=8,
-            column=0
-        )
+            checkboxes.grid(
+                row=i,
+                column=0,
+            )
+
+            checkboxes.button.grid(
+                row=i,
+                column=1,
+                padx=10,
+                pady=10,
+                # sticky='EW',
+            )
 
     @staticmethod
     def on_checkbox_change(is_checked, button):
-        button.update_state(is_checked)
+        button.config(state=tk.NORMAL if is_checked else tk.DISABLED)
 
 
 if __name__ == "__main__":
