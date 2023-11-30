@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.buttons import MainButton
+from GUI.WindowWidgets.buttons import MainButton
 
 # Notes for the __init__ method:
 # 'parent' is a reference to the parent widget, where 'MainCheckbox' will be placed, in this case 'App'.
