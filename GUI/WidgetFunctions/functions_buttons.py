@@ -1,17 +1,10 @@
+from GUI.WindowFrames.top_windows import SecondaryWindow
+
+
 class MainButtonFunctions:
+    # The function calls the secondary_window function from 'top_windows.py'
+    # It has one parameter 'effect_name', which determines for which effect the
+    # Top Window is created for.
     @staticmethod
-    def set_parameters_button(button_text):
-        if button_text == "Chorus":
-            print("Chorus function executed.")
-        elif button_text == "Clipping":
-            print("Clipping function executed.")
-        elif button_text == "Distortion":
-            print("Distortion function executed.")
-        elif button_text == "Phaser":
-            print("Phaser function executed.")
-        elif button_text == "Compressor":
-            print("Compressor function executed.")
-        elif button_text == "Gain":
-            print("Gain function executed.")
-        elif button_text == "Limiter":
-            print("Limiter function executed.")
+    def set_parameters_button(effect_name):
+        SecondaryWindow.secondary_window(effect_name)

@@ -2,7 +2,7 @@ from GUI.WindowWidgets.checkboxes import MainCheckbox
 import tkinter as tk
 
 from GUI.WidgetFunctions.functions_buttons import MainButtonFunctions
-from GUI.WidgetFunctions.functions_checkbox import MainCheckboxFunctions
+from GUI.WidgetFunctions.functions_checkboxes import MainCheckboxFunctions
 
 
 def main_layers(self, start_row, end_row, column, frame_label, checkbox_labels):
