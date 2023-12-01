@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.WindowFrames.window_frames import main_layers
+from GUI.WindowFrames.window_frames import main_frames
 
 
 class MainWindow(tk.Tk):
@@ -31,11 +31,25 @@ class MainWindow(tk.Tk):
 
         # First Frame. It will create 'Guitar Effects'
         # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_layers(self, 1, 5, 0, 'Guitar Effects', guitar_effects)
+        main_frames(
+            self,
+            1,
+            5,
+            0,
+            'Guitar-Style effects',
+            guitar_effects
+        )
 
         # Second Frame. It will create 'Dynamic Range Effects'
         # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_layers(self, 6, 9, 0, 'Dynamic Range Effects', dynamic_range_effects)
+        main_frames(
+            self,
+            6,
+            9,
+            0,
+            'Loudness and Dynamic Range Effects',
+            dynamic_range_effects
+        )
 
 
 # Makes the window stay on screen until the user closes it.

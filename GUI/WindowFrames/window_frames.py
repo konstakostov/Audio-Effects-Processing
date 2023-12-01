@@ -5,7 +5,7 @@ from GUI.WidgetFunctions.functions_buttons import MainButtonFunctions
 from GUI.WidgetFunctions.functions_checkboxes import MainCheckboxFunctions
 
 
-def main_layers(self, start_row, end_row, column, frame_label, checkbox_labels):
+def main_frames(self, start_row, end_row, column, frame_label, checkbox_labels):
     # A frame is created to store the layer and min size is set for it
     main_frame = tk.Frame()
     main_frame.grid_columnconfigure(0, weight=1)
