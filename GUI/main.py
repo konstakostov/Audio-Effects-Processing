@@ -31,7 +31,7 @@ class MainWindow(tk.Tk):
             1,
             5,
             0,
-            'Guitar-Style effects',
+            'Guitar-Style Effects',
             EffectGroups.guitar_effects
         )
 

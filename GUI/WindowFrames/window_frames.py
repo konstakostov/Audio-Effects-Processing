@@ -15,6 +15,8 @@ def main_frames(self, start_row, end_row, column, frame_label, checkbox_labels):
     tk.Label(
         self,
         text=frame_label,
+        font=('Segoe UI', '10', 'bold',)
+
     ).grid(
         row=start_row - 1,
         column=column,
