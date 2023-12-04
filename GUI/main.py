@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Effects.effect_groups import EffectGroups
+from Effects.GUI_Info.effect_groups import EffectGroups
 from GUI.WindowFrames.window_frames import main_frames
 
 

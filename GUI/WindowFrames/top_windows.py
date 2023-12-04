@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Effects.top_window_effect_parameters import TopWindowEffectsParameters
+from Effects.GUI_Info.top_window_effect_parameters import TopWindowEffectsParameters
 from GUI.WindowFrames.top_window_frames import top_window_frames
 
 
