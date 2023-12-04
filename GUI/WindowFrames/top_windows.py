@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from GUI.Effects.effect_parameters import Effects
 from GUI.WindowFrames.top_window_frames import top_window_frames
 
 
@@ -24,38 +25,12 @@ class SecondaryWindow:
         # Makes window non-resizable
         top_window.resizable(False, False)
 
-        # # 'rate_hz', 'depth', 'centre_delay_ms', 'feedback', 'mix'
-        # chorus_parameters =
-        #
-        # # threshold_db
-        # clipping_parameters = [
-        #
-        # ]
-
-        used_effects = {
-            'Chorus': [
-                ['Rate [Hz]', 0, 1000],
-                ['Depth', 0, 1],
-                ['Centre Delay [ms]', 0, 1000],
-                ['Feedback', 0, 1],
-                ['Mix', 0, 1],
-            ],
-            'Clipping': [
-                ['Threshold [dB]', -100, 100],
-            ],
-            'Distortion': [],
-            'Phaser': [],
-            'Compressor': [],
-            'Gain': [],
-            'Limiter': [],
-        }
-
-        for effect, parameters in used_effects.items():
+        for effect, parameters in Effects.used_effects.items():
             if effect == effect_name:
                 top_window_frames(
                     top_window,
                     0,
-                    len(parameters) - 1,
+                    len(parameters),
                     0,
                     parameters,
                 )
