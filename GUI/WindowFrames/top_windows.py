@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Effects.effect_parameters import Effects
+from GUI.Effects.top_window_effect_parameters import TopWindowEffectsParameters
 from GUI.WindowFrames.top_window_frames import top_window_frames
 
 
@@ -25,7 +25,7 @@ class SecondaryWindow:
         # Makes window non-resizable
         top_window.resizable(False, False)
 
-        for effect, parameters in Effects.used_effects.items():
+        for effect, parameters in TopWindowEffectsParameters.used_effects.items():
             if effect == effect_name:
                 top_window_frames(
                     top_window,

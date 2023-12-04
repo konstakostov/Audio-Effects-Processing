@@ -1,4 +1,4 @@
-class Effects:
+class TopWindowEffectsParameters:
     used_effects = {
         'Chorus': [
             ['Rate [Hz]', 0, 1000],
@@ -40,5 +40,39 @@ class Effects:
             ['Threshold [dB]', -100, 100],
             ['Release [ms]', 0, 10000],
         ],
+
+        'Highpass Filter': [
+            ['Cutoff Frequency [Hz]', 0, 1000]
+        ],
+
+        'Ladder Filter': [
+            ['Mode', 0, 5],
+            ['Cutoff [Hz]', 0, 1000],
+            ['Resonance', 0, 1],
+            ['Drive', 1, 100],
+        ],
+
+        'Lowpass Filter': [
+            ['Cutoff Frequency [Hz]', 0, 1000]
+        ],
+
+        'Delay': [
+            ['Delay [s]', 0, 30],
+            ['Feedback', 0, 1],
+            ['Mix', 0, 1],
+        ],
+
+        'Reverb': [
+            ['Room Size', 0, 1],
+            ['Damping', 0, 1],
+            ['Wet Level', 0, 1],
+            ['Dry Level', 0, 1],
+            ['Width', 0, 1],
+            ['Freeze Mode', 0, 1],
+        ],
+
+        'PitchShift': [
+            ['Semitones', 0, 10],
+        ]
     }
 
