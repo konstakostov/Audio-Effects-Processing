@@ -15,14 +15,14 @@ def main_frames(self, start_row, end_row, column, frame_label, checkbox_labels):
     tk.Label(
         self,
         text=frame_label,
-        font=('Segoe UI', '10', 'bold',)
+        font=('Segoe UI', '10', 'bold',),
 
     ).grid(
         row=start_row - 1,
         column=column,
         padx=10,
         pady=10,
-        sticky='EW'
+        sticky='EW',
     )
 
     # In the rows in range 'start_row' - 'end_row' are created checkboxes and buttons.

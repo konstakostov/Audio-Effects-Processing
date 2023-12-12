@@ -13,8 +13,8 @@ class SecondaryWindow:
         top_window.title(effect_name + " Parameters")
 
         # Sets initial size to 50% of screen size
-        window_width = top_window.winfo_screenwidth() * 0.25
-        window_height = top_window.winfo_screenheight() * 0.25
+        window_width = top_window.winfo_screenwidth() * 0.20
+        window_height = top_window.winfo_screenheight() * 0.35
 
         # Center window on Users screen
         position_top = int(top_window.winfo_screenheight() / 2 - window_height / 2)
