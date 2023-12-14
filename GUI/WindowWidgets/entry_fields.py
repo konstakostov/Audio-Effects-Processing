@@ -56,10 +56,17 @@ class TopEntryField(tk.Entry):
 
         self.config(validatecommand=(self.register(self.validate_entry_field), "%P"))
 
+        # Checking if the selected entry field value is empty
         if not value:
             self.error_label.config(text="", fg="black")
             return True
 
+        # Checking if the selected entry field value is:
+        #   - Every character is digit or '.' AND
+        #   - Only 1 or less '.' characters occur AND
+        #   - The value is in predefined range
+        # If the entry field does not fit the requirements and ValueError is raised
+        # An error message will be displayed at the bottom of the Parameter's Top Window
         if all(c.isdigit() or (c == '.') for c in value) and value.count('.') <= 1:
             try:
                 value_as_float = float(value)
@@ -77,6 +84,7 @@ class TopEntryField(tk.Entry):
                 )
                 return False
 
+        # If the entered values is not a number an error message will be displayed
         else:
             self.error_label.config(
                 text="Entered value must be a number",
