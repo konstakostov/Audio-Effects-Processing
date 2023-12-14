@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Notes for the __init__ method:
 # 'parent' is a reference to the parent widget, where 'MainCheckbox' will be placed, in this case 'App'.
-# 'bottom_value' and 'top_value' define the range of the value that can entered in the entry field
+# 'bottom_value' and 'top_value' define the range of the value that can be entered in the entry field
 # '**kwargs' refers to any arguments to be passed on this widget. They can be optional
 # parameters or attributes (text/font/etc.)
 
@@ -53,19 +53,34 @@ class TopEntryField(tk.Entry):
         #   - OR Every character is digit or '.'
         #   - AND Only 1 or less '.' characters occur
         #   - AND The value is in predefined range
-        if (
-                value == '' or
-                all(c.isdigit() or c == '.' for c in value) and
-                value.count('.') <= 1 and
-                self.bottom_value <= float(value) <= self.top_value):
+
+        self.config(validatecommand=(self.register(self.validate_entry_field), "%P"))
+
+        if not value:
             self.error_label.config(text="", fg="black")
             return True
-        # If the value is breaking any of the requirements an error message
-        # is displayed on the bottom of the window
+
+        if all(c.isdigit() or (c == '.') for c in value) and value.count('.') <= 1:
+            try:
+                value_as_float = float(value)
+                if self.bottom_value <= value_as_float <= self.top_value:
+                    self.error_label.config(text="", fg="black")
+                    return True
+                else:
+                    raise ValueError
+
+            except ValueError:
+                self.error_label.config(
+                    text=f"The number must be between {self.bottom_value} and {self.top_value}",
+                    fg="red",
+                    font=('Segoe UI', '10', 'bold',),
+                )
+                return False
+
         else:
             self.error_label.config(
-                text=f"Error: The number must be between {self.bottom_value} and {self.top_value}",
+                text="Entered value must be a number",
                 fg="red",
                 font=('Segoe UI', '10', 'bold',),
             )
-            return True
+            return False
