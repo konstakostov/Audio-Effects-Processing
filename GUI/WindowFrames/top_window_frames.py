@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.WindowWidgets.entry_fields import TopEntryField
+from GUI.WindowWidgets.spinboxes import TopSpinbox
 
 
 # entry_field_labels, entry_field_bottom_value, entry_field_top_value
@@ -13,25 +13,40 @@ def top_window_frames(self, start_row, end_row, column, entry_field_data):
     for i in range(start_row, end_row):
         main_frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        entry_field = TopEntryField(
+        default_spinbox_value = tk.StringVar()
+
+        spinbox = TopSpinbox(
             self,
             bottom_value=entry_field_data[i][1],
-            top_value=entry_field_data[i][2]
+            top_value=entry_field_data[i][2],
+            textvariable=default_spinbox_value
         )
 
-        entry_field.grid(
+        spinbox.grid(
             row=i,
-            column=column,
+            column=column + 1,
         )
 
-        entry_field_label = tk.Label(
+        spinbox_name = tk.Label(
             self,
             text=entry_field_data[i - start_row][0],
         )
 
-        entry_field_label.grid(
+        spinbox_name.grid(
             row=i,
-            column=column + 1,
+            column=column,
+            padx=10,
+            pady=10,
+        )
+
+        spinbox_range = tk.Label(
+            self,
+            text=f"Range: {entry_field_data[i][1]} to {entry_field_data[i][2]}",
+        )
+
+        spinbox_range.grid(
+            row=i,
+            column=column + 2,
             padx=10,
             pady=10,
         )
