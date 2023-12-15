@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Notes for the __init__ method:
 # 'parent' is a reference to the parent widget, where 'MainCheckbox' will be placed, in this case 'App'.
-# 'bottom_value' and 'top_value' define the range of the value that can be entered in the entry field
+# 'bottom_value' and 'top_value' define the range of the value that can be entered in the spinbox
 # '**kwargs' refers to any arguments to be passed on this widget. They can be optional
 # parameters or attributes (text/font/etc.)
 
