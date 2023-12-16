@@ -1,7 +1,10 @@
+import os
 import tkinter as tk
+from tkinter import filedialog
 
 from GUI.effects_data import EffectGroups
 from GUI.functions import MainCheckboxFunctions, MainButtonFunctions
+from GUI.top_windows import SecondaryWindow
 from GUI.widgets import MainCheckbox
 
 
@@ -26,6 +29,38 @@ class MainWindow(tk.Tk):
         # Makes window resizable
         self.resizable(True, True)
 
+        # Variable to hold the button for choosing .wav to process
+        select_file_button = tk.Button(
+            self,
+            text="Select .wav File",
+            command=self.select_wav_file_to_process
+        )
+
+        # Positioning the button for choosing .wav file
+        select_file_button.grid(
+            row=9,
+            column=0,
+            columnspan=2,
+            padx=10,
+            pady=10,
+        )
+
+        # Variable to hold the button for processing the .wav file
+        process_button = tk.Button(
+            self,
+            text="Process Audio File",
+            command=self.get_saved_effects
+        )
+
+        # Positioning the button for processing the .wav file
+        process_button.grid(
+            row=9,
+            column=2,
+            columnspan=2,
+            padx=10,
+            pady=10,
+        )
+
         # It takes start_row, end_row, column, frame_label, effects name labels as parameters
         self.create_frames([
             # First Frame 'Guitar Effects'
@@ -39,6 +74,31 @@ class MainWindow(tk.Tk):
             # Fifth Frame 'Pitch Effects'
             (8, 9, 2, 'Pitch Effects', EffectGroups.pitch_effects)
         ])
+
+    # Function to select .wav file to process
+    @staticmethod
+    def select_wav_file_to_process():
+        # Getting the current directory
+        current_dir = os.getcwd()
+
+        # Opening a file dialog to select a .wav file
+        file_path = filedialog.askopenfilename(
+            # Initial directory
+            initialdir=current_dir,
+            # Title of file dialog window
+            title="Select .wav File",
+            # Filtering to display only .wav files
+            filetypes=(("WAV files", "*.wav"), ("All files", "*.*")),
+        )
+
+        # # Display file path chosen
+        # if file_path:
+        #     print("Selected .wav file:", file_path)
+
+    # Getting all saved effects and their parameters
+    @staticmethod
+    def get_saved_effects():
+        saved_parameters = SecondaryWindow.saved_effect_parameters
 
     # Creating all frames
     def create_frames(self, frames):
