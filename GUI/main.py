@@ -1,11 +1,11 @@
 import tkinter as tk
 
-from Effects.GUI_Info.effect_groups import EffectGroups
-from GUI.WidgetFunctions.functions_buttons import MainButtonFunctions
-from GUI.WidgetFunctions.functions_checkboxes import MainCheckboxFunctions
-from GUI.WindowWidgets.checkboxes import MainCheckbox
+from GUI.effects_data import EffectGroups
+from GUI.functions import MainCheckboxFunctions, MainButtonFunctions
+from GUI.widgets import MainCheckbox
 
 
+# Main Window
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -13,7 +13,7 @@ class MainWindow(tk.Tk):
         # Sets window title
         self.title("Audio Effects Processing")
 
-        # Sets initial size to 50% of screen size
+        # Sets initial size (width, height) to 50% of screen size
         window_width = self.winfo_screenwidth() * 0.50
         window_height = self.winfo_screenheight() * 0.50
 
@@ -40,10 +40,12 @@ class MainWindow(tk.Tk):
             (8, 9, 2, 'Pitch Effects', EffectGroups.pitch_effects)
         ])
 
+    # Creating all frames
     def create_frames(self, frames):
         for frame in frames:
             self.main_frames(*frame)
 
+    # Creating a single frame
     def main_frames(self, start_row, end_row, column, frame_label, checkbox_labels):
         # A frame is created to store the layer and min size is set for it
         main_frame = tk.Frame()
@@ -69,17 +71,20 @@ class MainWindow(tk.Tk):
         for i in range(start_row, end_row):
             main_frame.grid_rowconfigure(i, weight=1, pad=10)
 
+            # Variable to hold the checkbox
             checkbox = MainCheckbox(
                 self,
                 text=checkbox_labels[i - start_row],
                 callback=MainCheckboxFunctions.on_checkbox_change,
             )
 
+            # Positioning the checkbox
             checkbox.grid(
                 row=i,
                 column=column,
             )
 
+            # Positioning the button for the checkbox
             checkbox.button.grid(
                 row=i,
                 column=column + 1,
@@ -87,6 +92,7 @@ class MainWindow(tk.Tk):
                 pady=10,
             )
 
+            # Adding functionality to the checkbox button
             checkbox.button.config(
                 command=lambda text=checkbox_labels[i - start_row]:
                 MainButtonFunctions.set_parameters_button(text)
