@@ -13,13 +13,10 @@ def top_window_frames(self, start_row, end_row, column, entry_field_data):
     for i in range(start_row, end_row):
         main_frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        default_spinbox_value = tk.StringVar()
-
         spinbox = TopSpinbox(
             self,
             bottom_value=entry_field_data[i][1],
             top_value=entry_field_data[i][2],
-            textvariable=default_spinbox_value
         )
 
         spinbox.grid(
