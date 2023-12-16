@@ -75,4 +75,3 @@ class TopWindowEffectsParameters:
             ['Semitones', 0, 10],
         ]
     }
-

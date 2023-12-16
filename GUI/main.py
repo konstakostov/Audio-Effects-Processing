@@ -1,7 +1,9 @@
 import tkinter as tk
 
 from Effects.GUI_Info.effect_groups import EffectGroups
-from GUI.WindowFrames.window_frames import main_frames
+from GUI.WidgetFunctions.functions_buttons import MainButtonFunctions
+from GUI.WidgetFunctions.functions_checkboxes import MainCheckboxFunctions
+from GUI.WindowWidgets.checkboxes import MainCheckbox
 
 
 class MainWindow(tk.Tk):
@@ -24,60 +26,71 @@ class MainWindow(tk.Tk):
         # Makes window resizable
         self.resizable(True, True)
 
-        # First Frame. It will create 'Guitar Effects'
         # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_frames(
+        self.create_frames([
+            # First Frame 'Guitar Effects'
+            (1, 5, 0, 'Guitar-Style Effects', EffectGroups.guitar_effects),
+            # Second Frame Dynamic Range Effects'
+            (6, 9, 0, 'Dynamic Range Effects', EffectGroups.dynamic_range_effects),
+            # Third Frame 'Equalizers and Filters'
+            (1, 4, 2, 'Equalizers and Filters', EffectGroups.eq_filter_effects),
+            # Fourth Frame 'Spatial Effects'
+            (5, 7, 2, 'Spatial Effects', EffectGroups.spatial_effects),
+            # Fifth Frame 'Pitch Effects'
+            (8, 9, 2, 'Pitch Effects', EffectGroups.pitch_effects)
+        ])
+
+    def create_frames(self, frames):
+        for frame in frames:
+            self.main_frames(*frame)
+
+    def main_frames(self, start_row, end_row, column, frame_label, checkbox_labels):
+        # A frame is created to store the layer and min size is set for it
+        main_frame = tk.Frame()
+        main_frame.grid_columnconfigure(0, weight=1)
+        main_frame.grid(sticky='EW')
+
+        # A label to visualise the frame's effects, and it's positioned in the window.
+        tk.Label(
             self,
-            1,
-            5,
-            0,
-            'Guitar-Style Effects',
-            EffectGroups.guitar_effects
+            text=frame_label,
+            font=('Segoe UI', '10', 'bold',),
+        ).grid(
+            row=start_row - 1,
+            column=column,
+            padx=10,
+            pady=10,
+            sticky='W',
         )
 
-        # Second Frame. It will create 'Dynamic Range Effects'
-        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_frames(
-            self,
-            6,
-            9,
-            0,
-            'Dynamic Range Effects',
-            EffectGroups.dynamic_range_effects
-        )
+        # In the rows in range 'start_row' - 'end_row' are created checkboxes and buttons.
+        # When the checkbox is activated, it enables the button.
+        # The checkbox is positioned in column 'column', and the button in column 'column' + 1.
+        for i in range(start_row, end_row):
+            main_frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        # Third Frame. It will create 'Equalizers and Filters'
-        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_frames(
-            self,
-            1,
-            4,
-            2,
-            'Equalizers and Filters',
-            EffectGroups.eq_filter_effects
-        )
+            checkbox = MainCheckbox(
+                self,
+                text=checkbox_labels[i - start_row],
+                callback=MainCheckboxFunctions.on_checkbox_change,
+            )
 
-        # Fourth Frame. It will create 'Spatial Effects'
-        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_frames(
-            self,
-            5,
-            7,
-            2,
-            'Spatial Effects',
-            EffectGroups.spatial_effects
-        )
+            checkbox.grid(
+                row=i,
+                column=column,
+            )
 
-        # Fifth Frame. It will create 'Pitch Effects'
-        # It takes start_row, end_row, column, frame_label, effects name labels as parameters
-        main_frames(
-            self,
-            8,
-            9,
-            2,
-            'Pitch Effects',
-            EffectGroups.pitch_effects
-        )
+            checkbox.button.grid(
+                row=i,
+                column=column + 1,
+                padx=10,
+                pady=10,
+            )
+
+            checkbox.button.config(
+                command=lambda text=checkbox_labels[i - start_row]:
+                MainButtonFunctions.set_parameters_button(text)
+            )
 
 
 # Makes the window stay on screen until the user closes it.
