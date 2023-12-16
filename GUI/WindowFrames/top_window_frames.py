@@ -3,7 +3,6 @@ import tkinter as tk
 from GUI.WindowWidgets.spinboxes import TopSpinbox
 
 
-# entry_field_labels, entry_field_bottom_value, entry_field_top_value
 def top_window_frames(self, start_row, end_row, column, entry_field_data):
     # A frame is created to store the layer and min size is set for it
     main_frame = tk.Frame()
