@@ -1,0 +1,50 @@
+import os
+from tkinter import messagebox
+
+from pedalboard import Pedalboard
+from pedalboard.io import AudioFile
+
+
+def process_audio(audio_effects, a_name, a_path):
+    # Variable to hold the Pedalboard object
+    board = Pedalboard(audio_effects)
+
+    # Variable to hold and determine and the output file name
+    output_name = determine_output_file_name(a_path)
+
+    # Opening the input file with AudioFile
+    with AudioFile(a_name) as file:
+        # Creating the output file with the AudioFile
+        with AudioFile(output_name, "w", file.samplerate, file.num_channels) as output:
+            # The input file is split into chunks, so it is easier and faster to process it
+            # Each chunk is then written in the 'output' file, until the whole input file is processed
+            while file.tell() < file.frames:
+                chunk = file.read(int(file.samplerate))
+
+                board_processed = board(chunk, file.samplerate, reset=False)
+                output.write(board_processed)
+
+    # Returning a message to the user when the processing is completed
+    return messagebox.showinfo(
+        "Processing Status",
+        "Audio Processing Completed!")
+
+
+# Function to determine the output audio file name
+def determine_output_file_name(file_path):
+    # Variables to hold the file name and it's extension
+    base, extension = os.path.splitext(file_path)
+    # Variable to hold the initial output file name
+    output_file = f"{base}_output_{1}{extension}"
+
+    # Counter to add to the output file nae
+    counter = 2
+
+    # # Modifying the output file name if
+    # a file with the same name exists
+    while os.path.exists(output_file):
+        output_file = f"{base}_output_{counter}{extension}"
+        counter += 1
+
+    # Returning the output file name
+    return output_file

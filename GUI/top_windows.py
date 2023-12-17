@@ -47,7 +47,6 @@ class SecondaryWindow:
     @staticmethod
     def save_parameters(effect_name, values):
         SecondaryWindow.saved_effect_parameters[effect_name] = values
-        print(SecondaryWindow.saved_effect_parameters[effect_name])
 
 
 def top_window_frames(top_window, effect_name, start_row, end_row, column, entry_field_data):

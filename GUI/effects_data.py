@@ -7,7 +7,7 @@ class EffectGroups:
     dynamic_range_effects = ['Compressor', 'Gain', 'Limiter']
 
     # Creates a list, containing effects name labels for 'Equalizers and Filters'
-    eq_filter_effects = ['Highpass Filter', 'Ladder Filter', 'Lowpass Filter']
+    eq_filter_effects = ['Highpass Filter', 'Peak Filter', 'Lowpass Filter']
 
     # Creates a list, containing effects name labels for 'Spatial Effects'
     spatial_effects = ['Delay', 'Reverb']
@@ -22,9 +22,9 @@ class TopWindowEffectsParameters:
     used_effects = {
         # First Frame 'Guitar Effects'
         'Chorus': [
-            ['Rate [Hz]', 0, 1000],
+            ['Rate [Hz]', 0, 100],
             ['Depth', 0, 1],
-            ['Centre Delay [ms]', 0, 1000],
+            ['Centre Delay [ms]', 0, 10000],
             ['Feedback', 0, 1],
             ['Mix', 0, 1],
         ],
@@ -38,7 +38,7 @@ class TopWindowEffectsParameters:
         ],
 
         'Phaser': [
-            ['Rate [Hz]', 0, 100],
+            ['Rate [Hz]', 0, 1000],
             ['Depth', 0, 1],
             ['Center Frequency', 0, 1000],
             ['Feedback', 0, 1],
@@ -47,15 +47,14 @@ class TopWindowEffectsParameters:
 
         # Second Frame Dynamic Range Effects'
         'Compressor': [
-            ['Rate [Hz]', 0, 100],
             ['Threshold [dB]', -100, 100],
-            ['Ratio', 0, 1],
+            ['Ratio', 0.1, 1],
             ['Attack [ms]', 0, 10000],
             ['Release [ms]', 0, 10000],
         ],
 
         'Gain': [
-            ['Gain [dB]', 0, 100],
+            ['Gain [dB]', -100, 100],
         ],
 
         'Limiter': [
@@ -68,11 +67,10 @@ class TopWindowEffectsParameters:
             ['Cutoff Frequency [Hz]', 0, 1000]
         ],
 
-        'Ladder Filter': [
-            ['Mode', 0, 5],
-            ['Cutoff [Hz]', 0, 1000],
-            ['Resonance', 0, 1],
-            ['Drive', 1, 100],
+        'Peak Filter': [
+            ['Cutoff Frequency [Hz]', 0, 1000],
+            ['Gain [db]', 0, 100],
+            ['q', 0.1, 1],
         ],
 
         'Lowpass Filter': [
@@ -97,6 +95,6 @@ class TopWindowEffectsParameters:
 
         # Fifth Frame 'Pitch Effects'
         'PitchShift': [
-            ['Semitones', 0, 10],
+            ['Semitones', -72, 72],
         ]
     }

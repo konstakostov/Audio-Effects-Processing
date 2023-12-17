@@ -83,12 +83,14 @@ class TopSpinbox(tk.Entry):
 
         # Defining the value of the increment value,
         # based on the bottom and top value
-        if bottom_value == 0 and top_value == 1:
+        if top_value - bottom_value <= 5:
             increment_value = 0.1
-        elif top_value - bottom_value <= 100:
+        elif top_value - bottom_value <= 250:
             increment_value = 1
-        else:
+        elif top_value - bottom_value <= 500:
             increment_value = 10
+        else:
+            increment_value = 100
 
         # Variable to hold the spinbox widget,
         # and all it's parameters
@@ -118,5 +120,3 @@ class TopSpinbox(tk.Entry):
 
         except ValueError:
             return False
-
-

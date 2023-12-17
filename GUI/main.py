@@ -1,7 +1,9 @@
 import os
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 
+from Effects.functions import transform_effect_parameters
+from Effects.board import process_audio
 from GUI.effects_data import EffectGroups
 from GUI.functions import MainCheckboxFunctions, MainButtonFunctions
 from GUI.top_windows import SecondaryWindow
@@ -49,7 +51,7 @@ class MainWindow(tk.Tk):
         process_button = tk.Button(
             self,
             text="Process Audio File",
-            command=self.get_saved_effects
+            command=self.process_audio_file
         )
 
         # Positioning the button for processing the .wav file
@@ -75,9 +77,12 @@ class MainWindow(tk.Tk):
             (8, 9, 2, 'Pitch Effects', EffectGroups.pitch_effects)
         ])
 
+        # Variables to hold the input file name and directory
+        self.input_file_name = None
+        self.input_file_path = None
+
     # Function to select .wav file to process
-    @staticmethod
-    def select_wav_file_to_process():
+    def select_wav_file_to_process(self):
         # Getting the current directory
         current_dir = os.getcwd()
 
@@ -91,14 +96,55 @@ class MainWindow(tk.Tk):
             filetypes=(("WAV files", "*.wav"), ("All files", "*.*")),
         )
 
-        # # Display file path chosen
-        # if file_path:
-        #     print("Selected .wav file:", file_path)
+        # Checking if file path exist to determine the name of the file to process
+        if file_path:
+            # Extracting the file name from the file path
+            file_name = os.path.basename(file_path)
+
+            # Saving the input file name and directory
+            self.input_file_name = file_name
+            self.input_file_path = file_path
 
     # Getting all saved effects and their parameters
-    @staticmethod
-    def get_saved_effects():
+    def process_audio_file(self):
+        # Declaring variables that are parameters for 'process_audio' function
+        transformed_parameters = None
+        audio_name = None
+        audio_path = None
+
+        # Variable to get the used effects and their parameters
         saved_parameters = SecondaryWindow.saved_effect_parameters
+
+        # If no file name exists give error message to the user to select one
+        if self.input_file_name:
+            # Assigning the file name and directory to the
+            # variables to the 'process_audio' parameters
+            audio_name = self.input_file_name
+            audio_path = self.input_file_path
+        else:
+            messagebox.showerror(
+                "Error",
+                "No input file selected!")
+
+        # If there are no effects and parameters
+        # give error message to the user to select at least one
+        if saved_parameters:
+            # Assigning the effects and their parameters
+            # to a variable for 'process_audio' parameters
+            # after passing them to the 'transform_effect_parameters' function
+            transformed_parameters = transform_effect_parameters(saved_parameters)
+
+            # Clearing the 'saved_effect_parameters' dictionary
+            # so the previously chosen effects do not affect
+            # the next file to be processed
+            SecondaryWindow.saved_effect_parameters = {}
+        else:
+            messagebox.showerror(
+                "Error",
+                "No audio effects selected!")
+
+        # Processing the input file with the chosen effects
+        process_audio(transformed_parameters, audio_name, audio_path)
 
     # Creating all frames
     def create_frames(self, frames):
@@ -157,10 +203,3 @@ class MainWindow(tk.Tk):
                 command=lambda text=checkbox_labels[i - start_row]:
                 MainButtonFunctions.set_parameters_button(text)
             )
-
-
-# Makes the window stay on screen until the user closes it.
-# Without this the program will start and close, without the user noticing.
-if __name__ == "__main__":
-    app = MainWindow()
-    app.mainloop()
