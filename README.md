@@ -1,4 +1,4 @@
-# Audio Effects Processing version 0.1
+# Audio Effects Processing version 1.0
 
 ## Description
 
