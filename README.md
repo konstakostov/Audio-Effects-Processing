@@ -28,6 +28,10 @@ To use the tool, ensure you have Python 3 installed.
 
 5. Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same folder as the input file.
 
+## Future Improvements
+- [ ] Allow users to open _.wav_ file from any directory.
+- [ ] Add graphical representation of the input and output files in the Main Window.
+
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/konstakostov/Audio-Effects-Processing/blob/main/LICENSE) file for details.
 
