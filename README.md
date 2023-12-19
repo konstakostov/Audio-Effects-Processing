@@ -26,10 +26,10 @@ To use the tool, ensure you have Python 3 installed.
 
 ![Chorus Effects Parameters Top Window](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/c3825c4f-a1ad-4945-9e4a-4e351898286c)
 
-5. Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same folder as the input file.
+5. Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same directory as the input file.
 
 ## Future Improvements
-- [ ] Allow users to open _.wav_ file from any directory.
+- [x] Allow users to open _.wav_ file from any directory.
 - [ ] Add graphical representation of the input and output files in the Main Window.
 
 ## License
