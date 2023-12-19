@@ -77,8 +77,7 @@ class MainWindow(tk.Tk):
             (8, 9, 2, 'Pitch Effects', EffectGroups.pitch_effects)
         ])
 
-        # Variables to hold the input file name and directory
-        self.input_file_name = None
+        # Variable to hold the input file directory
         self.input_file_path = None
 
     # Function to select .wav file to process
@@ -96,30 +95,25 @@ class MainWindow(tk.Tk):
             filetypes=(("WAV files", "*.wav"), ("All files", "*.*")),
         )
 
-        # Checking if file path exist to determine the name of the file to process
+        # Checking if file path exist to determine the file to process
         if file_path:
-            # Extracting the file name from the file path
-            file_name = os.path.basename(file_path)
-
-            # Saving the input file name and directory
-            self.input_file_name = file_name
+            # # Saving the input directory
             self.input_file_path = file_path
 
     # Getting all saved effects and their parameters
     def process_audio_file(self):
         # Declaring variables that are parameters for 'process_audio' function
         transformed_parameters = None
-        audio_name = None
+        # audio_name = None
         audio_path = None
 
         # Variable to get the used effects and their parameters
         saved_parameters = SecondaryWindow.saved_effect_parameters
 
-        # If no file name exists give error message to the user to select one
-        if self.input_file_name:
-            # Assigning the file name and directory to the
-            # variables to the 'process_audio' parameters
-            audio_name = self.input_file_name
+        # If no input file path exists give error message to the user to select one
+        if self.input_file_path:
+            # Assigning the file directory to the
+            # variable for 'process_audio' parameters
             audio_path = self.input_file_path
         else:
             messagebox.showerror(
@@ -144,7 +138,8 @@ class MainWindow(tk.Tk):
                 "No audio effects selected!")
 
         # Processing the input file with the chosen effects
-        process_audio(transformed_parameters, audio_name, audio_path)
+        # process_audio(transformed_parameters, audio_name, audio_path)
+        process_audio(transformed_parameters, audio_path)
 
     # Creating all frames
     def create_frames(self, frames):
