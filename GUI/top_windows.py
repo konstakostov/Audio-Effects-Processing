@@ -1,5 +1,4 @@
 import tkinter as tk
-
 from GUI.effects_data import TopWindowEffectsParameters
 from GUI.widgets import TopSpinbox
 
@@ -49,6 +48,8 @@ class SecondaryWindow:
         SecondaryWindow.saved_effect_parameters[effect_name] = values
 
 
+# Creating top window frame for each of the effects to
+# position it in the main window frame
 def top_window_frames(top_window, effect_name, start_row, end_row, column, entry_field_data):
     # A frame is created to store the layer and min size is set for it
     main_frame = tk.Frame(top_window)

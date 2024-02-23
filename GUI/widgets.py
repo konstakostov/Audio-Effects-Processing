@@ -1,13 +1,12 @@
 import tkinter as tk
 
+
 # Notes for the __init__ method:
 # 'parent' is a reference to the parent widget, where 'MainCheckbox' will be placed,
 # in this case 'MainCheckbox'.
 # 'text' provides text to the button, by default is None and no text will be placed in the button.
 # '**kwargs' refers to any arguments to be passed on this widget. They can be optional
 # parameters or attributes (text/font/etc.)
-
-
 class MainButton(tk.Button):
     def __init__(self, parent, text="", **kwargs):
         super().__init__(parent, text=text, **kwargs)
@@ -26,8 +25,6 @@ class MainButton(tk.Button):
 # but accepts the current state of the checkbox and 'MainButton' instance.
 # '**kwargs' refers to any arguments to be passed on this widget. They can be optional
 # parameters or attributes (text/font/etc.)
-
-
 class MainCheckbox(tk.Checkbutton):
     def __init__(self, parent, callback=None, **kwargs):
         super().__init__(parent, command=self.checkbox_is_toggled, **kwargs)
@@ -65,8 +62,6 @@ class MainCheckbox(tk.Checkbutton):
 # 'bottom_value' and 'top_value' define the range of the value that can be entered in the spinbox
 # '**kwargs' refers to any arguments to be passed on this widget. They can be optional
 # parameters or attributes (text/font/etc.)
-
-
 class TopSpinbox(tk.Entry):
     def __init__(self, parent, bottom_value, top_value, **kwargs):
         super().__init__(parent, **kwargs)

@@ -30,25 +30,6 @@ def process_audio(audio_effects, a_path):
         "Audio Processing Completed!")
 
 
-# # Function to determine the output audio file name
-# def determine_output_file_name(file_path):
-#     # Variables to hold the file name and it's extension
-#     base, extension = os.path.splitext(file_path)
-#     # Variable to hold the initial output file name
-#     output_file = f"{base}_output_{1}{extension}"
-#
-#     # Counter to add to the output file nae
-#     counter = 2
-#
-#     # # Modifying the output file name if
-#     # a file with the same name exists
-#     while os.path.exists(output_file):
-#         output_file = f"{base}_output_{counter}{extension}"
-#         counter += 1
-#
-#     # Returning the output file name
-#     return output_file
-
 # Function to determine the output audio file name
 def determine_output_file_name(file_path):
     # Variables to hold the file directory and the file name with its extension
