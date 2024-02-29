@@ -13,7 +13,7 @@ To use the tool, ensure you have Python 3 installed.
     py -m pip install -r requirements.txt
     ```
 
-2. Navigate to the **Processing** folder and run **`run_gui.py`** to launch the tool.
+2. Navigate to the **Run** folder and run **`run_gui.py`** to launch the tool.
 
 ![Main Window of the GUI](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/a387fce9-b71e-46e7-a110-80535c4b6dea)
 
