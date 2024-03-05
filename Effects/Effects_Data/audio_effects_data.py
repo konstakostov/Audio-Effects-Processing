@@ -1,3 +1,10 @@
+"""
+This class holds all the data related to the used audio effects groups.
+Each group consist of one or more audio effect.
+Each effect has its own parameter(s) and their min and max allowed values.
+"""
+
+
 class AudioEffectsData:
     guitar_style_effects = {
         'Chorus': [

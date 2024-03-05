@@ -1,6 +1,11 @@
+"""
+In this class are stored the following variables:
+The 'file_path_selected_wav_file' holds the path to the input file directory
+The 'saved_effect_parameters' holds all the saved effect parameters
+"""
+
+
 class VariableStorage:
-    # Variable to hold the input file directory
     file_path_selected_wav_file = None
 
-    # Dictionary to hold all the saved effect parameters
     saved_effect_parameters = {}

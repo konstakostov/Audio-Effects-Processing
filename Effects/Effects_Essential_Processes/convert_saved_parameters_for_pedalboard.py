@@ -6,16 +6,19 @@ from pedalboard_native import (
     PitchShift,
 )
 
+"""
+This functions is used to transform every effect and it's parameters as a Pedalboard object.
+The 'result' variable is used to store all used Pedalboard objects.
+We are iterating through every selected effects and their parameters.
+If there is a match with the selected effect it is transformed as a Pedalboard object.
+The transformed Pedalboard object is appended to the 'result' variable.
+The 'result' variable is returned when the function is called.
+"""
 
-# Function to transform every effect and it's parameters
-# as Pedalboard Plugin objects
+
 def convert_effect_parameters(parameters):
-    # Variable to hold all the Plugin Objects
     result = []
 
-    # Iterating through every effect and their parameters,
-    # transforming them into Plugin Objects and appending them
-    # to the 'result' list
     for name, parameter_values in parameters.items():
         if name == "Chorus":
             result.append(Chorus(
@@ -103,5 +106,4 @@ def convert_effect_parameters(parameters):
                 semitones=parameter_values[0]
             ))
 
-    # Return the Plugin Objects when the function is called
     return result

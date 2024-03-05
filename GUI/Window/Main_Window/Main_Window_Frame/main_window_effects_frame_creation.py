@@ -1,8 +1,17 @@
 import tkinter as tk
 
-from GUI.Widgets.Buttons_Functionality.main_button_functionality import MainButtonFunctionality
-from GUI.Widgets.Checkboxes.main_checkbox import MainCheckbox
-from GUI.Widgets.Checkboxes_Functionality.main_checkbox_functionality import MainCheckboxFunctionality
+from GUI.Widgets.Buttons.main_button import MainButtonFunctionality
+from GUI.Widgets.Checkboxes.main_checkbox import MainCheckbox, MainCheckboxFunctionality
+
+"""
+The 'create_main_window_effect_frame' function is used to create each frame for the Main Window. The weight for each of 
+columns in the frame is set to 1.
+The label for each frame is the selected group name.
+In each frame a checkboxes and buttons are created, which are positioned bellow the label using the 'MainCheckbox' class
+as template. The number of checkboxes and buttons are determined by the number of effects in each group. The rows and 
+columns they take in the Main Window are defined beforehand. The button, next to each checkbox, is used to call a Top
+Window that allows the user to set the values of corresponding effect parameters.
+"""
 
 
 def create_main_window_effect_frame(parent, effects_input_data):
@@ -21,13 +30,9 @@ def create_main_window_effect_frame(parent, effects_input_data):
         pady=10,
         sticky="W")
 
-    # In the rows in range 'start_row' - 'end_row' are created checkboxes and buttons.
-    # When the checkbox is activated, it enables the button.
-    # The checkbox is positioned in column 'column', and the button in column 'column' + 1.
     for i in range(effects_input_data["start_row"], effects_input_data["end_row"]):
         main_window_frame.grid_rowconfigure(i, weight=1, pad=10)
 
-        # Variable to hold the checkbox
         checkbox = MainCheckbox(
             parent,
             text=effects_input_data["effects_in_group"][i - effects_input_data["start_row"]],
@@ -46,7 +51,6 @@ def create_main_window_effect_frame(parent, effects_input_data):
             pady=10,
         )
 
-        # Adding functionality to the checkbox button
         checkbox.button.config(
             command=lambda text=effects_input_data["effects_in_group"][i - effects_input_data["start_row"]]:
             MainButtonFunctionality.call_top_window_effects_parameters(text)

@@ -1,5 +1,10 @@
 from Effects.Effects_Data.audio_effects_groups_data import AudioEffectsGroupsData
 
+"""
+The 'MainWindowEffectsFrameInputData' class is used to hold the data for each of the frame. Each frame has the following
+attributes: 'start_row', 'end_row', 'column', 'effects_group_name' and 'effects_in_group'.
+"""
+
 
 class MainWindowEffectsFrameInputData:
     effects_frames_input_data = [
