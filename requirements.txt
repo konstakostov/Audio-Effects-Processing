@@ -1,2 +1,2 @@
 numpy==1.26.4
-pedalboard==0.8.9
+pedalboard==0.9.1
