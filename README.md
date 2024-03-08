@@ -15,7 +15,7 @@ To use the tool, ensure you have Python 3 installed.
 
 2. Navigate to the **Run** folder and run **`run_gui.py`** to launch the tool.
 
-![Main Window of the GUI](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/a387fce9-b71e-46e7-a110-80535c4b6dea)
+![Main Window of the GUI](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/64473e6f-e382-4320-960c-7d0bb5011924)
 
 3. To select a `.wav` file for processing, click the **"Select .wav File"** button and choose the desired file.
     - The `.wav` file must be placed in the **Processing** folder.
@@ -24,13 +24,14 @@ To use the tool, ensure you have Python 3 installed.
     - After unlocking the button and clicking it, a top window will appear displaying all the selected effects' parameters.
     - Adjust the values of each parameter using the provided spinboxes or by directly editing the field within the allowed range.
 
-![Chorus Effects Parameters Top Window](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/c3825c4f-a1ad-4945-9e4a-4e351898286c)
+![Chorus Effects Parameters Top Window](https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/2f778f33-0240-448d-aded-5ae03f9784da)
+
 
 5. Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same directory as the input file.
 
 ## Future Improvements
 - [x] Allow users to open _.wav_ file from any directory.
-- [ ] Add graphical representation of the input and output files in the Main Window.
+- [x] Add graphical representation of the input and output files in the Main Window.
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/konstakostov/Audio-Effects-Processing/blob/main/LICENSE) file for details.
