@@ -17,43 +17,109 @@ To use the tool, ensure you have Python 3 installed.
     </li>
     <li>
         <p>Navigate to the <b>Run</b> folder and run <b><i>run_gui.py</i></b> to launch the tool.</p>
-        <br>
-        <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/64473e6f-e382-4320-960c-7d0bb5011924" alt="Main Window of the GUI">
-        <br>
+        <p>
+            <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/64473e6f-e382-4320-960c-7d0bb5011924" alt="Main Window of the GUI">
+        </p>
     </li>
     <li>
-        There are 3 main sections to the GUI.
+        <p>
+            There are 3 main sections to the GUI.
+        </p>
         <ul>
             <li>
-                The first section (Labeled '1' on the above image) is the Audio Processing part.
+                <p>
+                    The first section (Labeled <b>'1'</b> on the above image) is the Audio Processing part.
+                </p>
                 <ul>
-                    <li>It allows the user to process an audio file, in .wav format.</li>
-                    <li>The user should first select the .wav file it wants to process via the "Select .wav File" button.</li>
-                    <li>The user can choose the effect(s) it wants to apply to it by selecting the checkbox next to each effect, and after that setting the effect parameters by clicking the "Set Parameters" button.</li>
-                    <li>After a .wav file and the desired effects have been chosen, the user should press the "Process Audio File" button. By pressing the button, the audio file is processed with the selected effects and saved in the directory of the initial .wav file.</li>
-                </ul>
-            </li>
-            <li>
-                The second section (Labeled '2' on the above image) allows the user to open the last saved directory in the audio processing part.
-                <ul>
-                    <li>It allows the user to quickly open the directory and find the last processed .wav file</li>
-                </ul>
-            </li>
-            <li>
-                The third section (Labeled '3' on the above image) is the Audio Visualization part.
-                <ul>
-                    <li>It allows the user to visualize an audio signal, in .wav format.</li>
-                    <li>The user should first select the .wav file it wants to process via the "Select .wav File" button.</li>
-                    <li>After an audio file has been selected, the user can choose the type of visualization to be plotted.</li>
                     <li>
-                        The available visualizations are:
+                        <p>
+                            It allows the user to process an audio file, in .wav format.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The user should first select the .wav file it wants to process via the "Select .wav File" button.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The user can choose the effect(s) it wants to apply to it by selecting the checkbox next to each effect, and after that setting the effect parameters by clicking the "Set Parameters" button.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            After a .wav file and the desired effects have been chosen, the user should press the "Process Audio File" button. By pressing the button, the audio file is processed with the selected effects and saved in the directory of the initial .wav file.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    The second section (Labeled <b>'2'</b> on the above image) allows the user to open the last saved directory in the audio processing part.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            It allows the user to quickly open the directory and find the last processed .wav file
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    The third section (Labeled <b>'3'</b> on the above image) is the Audio Visualization part.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            It allows the user to visualize an audio signal, in .wav format.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The user should first select the .wav file it wants to process via the "Select .wav File" button.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            After an audio file has been selected, the user can choose the type of visualization to be plotted.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The available visualizations are:
+                        </p>
                         <ul>
-                            <li>Amplitude-Time Graph</li>
-                            <li>Spectrogram</li>
-                            <li>Magnitude [dB] Spectrum Graph</li>
-                            <li>Magnitude [Energy] Spectrum Graph</li>
-                            <li>Angle Spectrum Graph</li>
-                            <li>Phase Spectrum Graph</li>
+                            <li>
+                                <p>
+                                    Amplitude-Time Graph: 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Spectrogram: 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Magnitude [dB] Spectrum Graph: 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Magnitude [Energy] Spectrum Graph: 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Angle Spectrum Graph:
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Phase Spectrum Graph:
+                                </p>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -63,15 +129,25 @@ To use the tool, ensure you have Python 3 installed.
     <li>
         <p>Choose the effect(s) to process the audio file by ticking the checkbox next to the desired effect(s) to unlock the <b>"Set Parameters"</b> button.</p>
         <ul>
-            <li>After unlocking the button and clicking it, a top window will appear displaying all the selected effects' parameters.</li>
-            <li>Adjust the values of each parameter using the provided spinboxes or by directly editing the field within the allowed range.</li>
+            <li>
+                <p>
+                    After unlocking the button and clicking it, a top window will appear displaying all the selected effects' parameters.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Adjust the values of each parameter using the provided spinboxes or by directly editing the field within the allowed range.
+                </p>
+            </li>
         </ul>
-        <br>
-        <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/2f778f33-0240-448d-aded-5ae03f9784da" alt="Top Window of the GUI">
+        <p>
+            <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/2f778f33-0240-448d-aded-5ae03f9784da" alt="Top Window of the GUI">
+        </p>
     </li>
-    <br>
     <li>
-        <p>Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same directory as the input file.</p>
+        <p>
+            Once you've selected all the effects and the input file, click the <b>"Set Parameters"</b> button to process the selected items. The output file will be generated in the same directory as the input file.
+        </p>
     </li>
 </ol>
 
