@@ -3,6 +3,7 @@ import tkinter as tk
 """
 The 'MainSpinbox' class is used to create an instance of a spinbox, that is going to be used as a template for other 
 spinboxes.
+
 In the __init__ method:
 - 'parent' is a reference to the parent widget, where 'MainSpinbox' will be placed;
 - 'bottom_value' is a reference to the bottom value of the spinbox;
@@ -15,6 +16,7 @@ The 'bottom_value' variable is used to hold the bottom value of the spinbox.
 The 'top_value' variable is used to hold the top value of the spinbox.
 The 'spinbox_validation' variable is used to hold the command, used for validating the characters, entered in the 
 spinbox.
+
 The 'validate_spinbox' function is used to validate the entered values in the spinbox. If the values are float or 
 integer type it returns True and if they are not - it returns False, preventing the character to be entered in the 
 spinbox.

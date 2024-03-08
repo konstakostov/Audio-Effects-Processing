@@ -11,6 +11,7 @@ The 'spinbox_values' variable is used to store all the spinbox values of the sel
 After that we are iterating through all the rows, where each row corresponds to a specific effect parameter. Every row 
 a 'MainSpinbox' class instance is used to create a spinbox which holds the value of the parameter, that will be defined 
 by the user. 
+
 The 'save_current_effect_parameters' function is used to create a button, that when pressed will save all the parameters
 values from the 'spinbox_values' variable in the specific variable by calling the 'save_effect_parameters' function.
 """

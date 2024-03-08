@@ -5,13 +5,13 @@ from GUI.Window.Top_Window_Parameters.Top_Window_Parameters_Frame.top_window_par
 from GUI.Window.Top_Window_Parameters.top_window_parameters_size import define_top_window_size
 
 """
-The 'TopWindowSetEffectParameters' class holds the 'create_top_window_effect_parameters' function.
+The 'TopWindowSetProcessingParameters' class holds the 'create_top_window_effect_parameters' function.
 The 'create_top_window_effect_parameters' function is used to create a Top Window, that displays the selected effect
 parameters, the Top Window title and creates the frame used to position the items in the Top Window.
 """
 
 
-class TopWindowSetEffectParameters:
+class TopWindowSetProcessingParameters:
     @staticmethod
     def create_top_window_effect_parameters(effect_name_to_set_parameters):
         top_window_effect_parameters = tk.Toplevel()

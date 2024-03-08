@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Widgets.Buttons.main_button import MainButton
+from GUI.Widgets.Buttons.Buttons_Template.main_button import MainButton
 
 """"
 The 'MainCheckbox' class is used to create an instance of a checkbox, that is going to be used as a template for other 
