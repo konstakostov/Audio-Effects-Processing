@@ -1,4 +1,4 @@
-# Audio Effects Processing version 1.0
+# Audio Effects Processing version 1.1
 
 ## Description
 
@@ -19,10 +19,11 @@ To use the tool, ensure you have Python 3 installed.
         <p>Navigate to the <b>Run</b> folder and run <b><i>run_gui.py</i></b> to launch the tool.</p>
         <br>
         <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/64473e6f-e382-4320-960c-7d0bb5011924" alt="Main Window of the GUI">
+        <br>
     </li>
     <li>
         There are 3 main sections to the GUI.
-        <ol>
+        <ul>
             <li>
                 The first section (Labeled '1' on the above image) is the Audio Processing part.
                 <ul>
@@ -47,29 +48,33 @@ To use the tool, ensure you have Python 3 installed.
                     <li>
                         The available visualizations are:
                         <ul>
-                            <li style='disk'>Amplitude-Time Graph</li>
-                            <li style='disk'>Spectrogram</li>
-                            <li style='disk'>Magnitude [dB] Spectrum Graph</li>
-                            <li style='disk'>Magnitude [Energy] Spectrum Graph</li>
-                            <li style='disk'>Angle Spectrum Graph</li>
-                            <li style='disk'>Phase Spectrum Graph</li>
+                            <li>Amplitude-Time Graph</li>
+                            <li>Spectrogram</li>
+                            <li>Magnitude [dB] Spectrum Graph</li>
+                            <li>Magnitude [Energy] Spectrum Graph</li>
+                            <li>Angle Spectrum Graph</li>
+                            <li>Phase Spectrum Graph</li>
                         </ul>
                     </li>
                 </ul>
             </li>
-        </ol>
+        </ul>
     </li>
     <li>
-        <ul>Choose the effect(s) to process the audio file by ticking the checkbox next to the desired effect(s) to unlock the **"Set Parameters"** button.
+        <p>Choose the effect(s) to process the audio file by ticking the checkbox next to the desired effect(s) to unlock the <b>"Set Parameters"</b> button.</p>
+        <ul>
             <li>After unlocking the button and clicking it, a top window will appear displaying all the selected effects' parameters.</li>
             <li>Adjust the values of each parameter using the provided spinboxes or by directly editing the field within the allowed range.</li>
         </ul>
+        <br>
         <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/2f778f33-0240-448d-aded-5ae03f9784da" alt="Top Window of the GUI">
     </li>
+    <br>
     <li>
-        Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same directory as the input file.
+        <p>Once you've selected all the effects and the input file, click the **"Set Parameters"** button to process the selected items. The output file will be generated in the same directory as the input file.</p>
     </li>
 </ol>
+
 
 ## Future Improvements
 - [x] Allow users to open _.wav_ file from any directory.
