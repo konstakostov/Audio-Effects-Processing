@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Window.Top_Window_Visualisation.Top_Window_Spectrogram.top_window_spectrogram_plot import \
+from Windows_Version.GUI.Window.Top_Window_Visualisation.Top_Window_Spectrogram.top_window_spectrogram_plot import \
     top_window_spectrogram_creation
 
 """

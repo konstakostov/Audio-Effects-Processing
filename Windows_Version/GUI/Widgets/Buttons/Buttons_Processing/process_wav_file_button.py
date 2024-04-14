@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
 
-from Effects.Effects_Essential_Processes.convert_saved_parameters_for_pedalboard import convert_effect_parameters
-from Effects.virtual_pedalboard import create_virtual_pedalboard
-from GUI.Variables.stored_variables import VariableStorage
+from Windows_Version.Effects.Effects_Essential_Processes.convert_saved_parameters_for_pedalboard import convert_effect_parameters
+from Windows_Version.Effects.virtual_pedalboard import create_virtual_pedalboard
+from Windows_Version.GUI.Variables.stored_variables import VariableStorage
 
 """
 The 'define_process_wav_file_button' function is used to define and position the button which will start the processing 

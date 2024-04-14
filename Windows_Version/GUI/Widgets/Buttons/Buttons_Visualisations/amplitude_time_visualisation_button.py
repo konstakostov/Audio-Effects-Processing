@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Window.Top_Window_Visualisation.Top_Window_Amplitude_Time_Graph.top_window_amplitude_time_plot import \
+from Windows_Version.GUI.Window.Top_Window_Visualisation.Top_Window_Amplitude_Time_Graph.top_window_amplitude_time_plot import \
     top_window_amplitude_time_creation
 
 """

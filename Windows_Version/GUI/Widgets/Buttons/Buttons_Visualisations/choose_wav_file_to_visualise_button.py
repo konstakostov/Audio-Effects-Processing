@@ -3,7 +3,7 @@ from tkinter import filedialog
 
 import os
 
-from GUI.Variables.stored_variables import VariableStorage
+from Windows_Version.GUI.Variables.stored_variables import VariableStorage
 
 """
 The 'define_choose_wav_file_to_visualise_button' function is used to define and position the button for choosing the 

@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Window.Top_Window_Visualisation.Top_Window_Magnitude_Spectrum_Energy.top_window_magnitude_spectrum_plot import \
+from Windows_Version.GUI.Window.Top_Window_Visualisation.Top_Window_Magnitude_Spectrum_Energy.top_window_magnitude_spectrum_plot import \
     top_window_magnitude_spectrum_creation
 
 """

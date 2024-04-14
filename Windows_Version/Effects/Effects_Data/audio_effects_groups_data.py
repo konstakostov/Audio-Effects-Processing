@@ -1,4 +1,4 @@
-from Effects.Effects_Data.audio_effects_data import AudioEffectsData
+from Windows_Version.Effects.Effects_Data.audio_effects_data import AudioEffectsData
 
 """
 This class holds all the data related to the used audio effects.

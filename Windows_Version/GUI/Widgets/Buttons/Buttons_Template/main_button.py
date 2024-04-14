@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from GUI.Window.Top_Window_Parameters.top_window_parameters import TopWindowSetProcessingParameters
+from Windows_Version.GUI.Window.Top_Window_Parameters.top_window_parameters import TopWindowSetProcessingParameters
 
 """"
 The 'MainButton' class is used to create an instance of a button, that is going to be used as a template for other 
