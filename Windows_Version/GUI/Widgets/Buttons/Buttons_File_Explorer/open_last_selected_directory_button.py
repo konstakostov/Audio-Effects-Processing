@@ -4,7 +4,7 @@ from tkinter import messagebox
 import subprocess
 import os
 
-from GUI.Variables.stored_variables import VariableStorage
+from Windows_Version.GUI.Variables.stored_variables import VariableStorage
 
 """
 The 'define_open_last_directory_button' function is used to define and position the button which will open the directory 

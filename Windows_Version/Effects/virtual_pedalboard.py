@@ -3,7 +3,7 @@ from tkinter import messagebox
 from pedalboard import Pedalboard
 from pedalboard.io import AudioFile
 
-from Effects.Effects_Essential_Processes.determine_processed_wav_file_name import determine_output_file_name
+from Windows_Version.Effects.Effects_Essential_Processes.determine_processed_wav_file_name import determine_output_file_name
 
 """
 This function is used to create the Virtual Pedalboard. 
