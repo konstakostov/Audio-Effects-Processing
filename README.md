@@ -2,11 +2,11 @@
 
 ## Description
 
-The **Audio Effects Processing** tool is a graphical user interface (GUI) developed using Tkinter, a Python library for creating user interfaces. It allows users to apply various audio effects to `.wav` files in a user-friendly way. These audio effects are implemented using Pedalboard, a Python library for applying effects to audio files.
+The **Audio Effects Processing** tool is a graphical user interface (GUI) developed using Tkinter, a Python library for creating user interfaces. It allows users to apply various audio effects to `.wav` files in a user-friendly way. These audio effects are implemented using Pedalboard, a Python library that applies effects to audio files.
 
 ## How to Use
 
-To use the tool, ensure you have Python 3 installed. 
+To use the tool, please make sure you have Python 3 installed. 
 
 <ol>
     <li>
@@ -18,7 +18,7 @@ To use the tool, ensure you have Python 3 installed.
     <li>
         <p>Navigate to the <b>Run</b> folder and run <b><i>run_gui.py</i></b> to launch the tool.</p>
         <p>
-            <img src="https://github.com/konstakostov/Audio-Effects-Processing/assets/122868401/64473e6f-e382-4320-960c-7d0bb5011924" alt="Main Window of the GUI">
+            <img src="https://github.com/user-attachments/assets/1a1e0dc3-c508-4f01-a1d3-3e1b91131d0a" alt="Main Window of the GUI">
         </p>
     </li>
     <li>
@@ -154,7 +154,7 @@ To use the tool, ensure you have Python 3 installed.
 
 ## Future Improvements
 - [x] Allow users to open _.wav_ file from any directory.
-- [x] Add graphical representation of the input and output files in the Main Window.
+- [x] Add a graphical representation of the input and output files in the Main Window.
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/konstakostov/Audio-Effects-Processing/blob/main/LICENSE) file for details.
