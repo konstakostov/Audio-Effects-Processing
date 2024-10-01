@@ -47,7 +47,9 @@ def top_window_amplitude_time_creation():
         time_array = np.arange(0, len(audio_data)) / fs
 
         fig, ax = plt.subplots()
-        ax.plot(time_array, audio_data)
+        ax.plot(time_array, audio_data[:, 0], label="Left Channel", color='blue')
+        ax.plot(time_array, audio_data[:, 1], label="Right Channel", color='orange')
+        ax.legend()
         ax.set_title("Amplitude-Time Graph")
         ax.set_xlabel("Time [s]")
         ax.set_ylabel("Amplitude [Samples]")
